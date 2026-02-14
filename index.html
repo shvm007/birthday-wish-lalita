@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>माँ को जन्मदिन की शुभकामनाएँ</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  background:linear-gradient(to right,#ffdde1,#ee9ca7);
+  color:#333;
+}
+
+.container{
+  padding:30px 20px;
+}
+
+h1{
+  font-size:30px;
+  color:#b30059;
+}
+
+h2{
+  font-size:22px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.6;
+  margin:15px 0;
+}
+
+button{
+  padding:12px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:#b30059;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#800040;
+}
+
+#celebration{
+  display:none;
+  font-size:22px;
+  margin-top:20px;
+  color:#b30059;
+}
+
+/* Slideshow */
+.slideshow{
+  max-width:300px;
+  margin:30px auto;
+  position:relative;
+}
+
+.slideshow img{
+  width:100%;
+  border-radius:15px;
+  display:none;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.slideshow img.active{
+  display:block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🎂 48वाँ जन्मदिन मुबारक हो माँ 🎂</h1>
+  <h2>ललिता राणा जी 🌸</h2>
+
+  <p>
+    माँ, आप मेरी ताकत हैं, मेरी प्रेरणा हैं।  
+    आपकी वजह से ही मैं आज जो भी हूँ।
+  </p>
+
+  <p>
+    भगवान आपको हमेशा खुश और स्वस्थ रखें।  
+    आपका बेटा हमेशा आपके साथ है।
+  </p>
+
+  <p><strong>– आपका बेटा, विराट राणा ❤️</strong></p>
+
+  <button onclick="celebrate()">Celebrate 🎉</button>
+
+  <div id="celebration">
+    🎉🎉 जन्मदिन की ढेर सारी शुभकामनाएँ माँ 🎉🎉
+  </div>
+
+  <!-- Slideshow Section -->
+  <div class="slideshow">
+    <img src="photo1.jpeg" class="active">
+    <img src="photo2.jpeg">
+    <img src="photo3.jpeg">
+  </div>
+</div>
+
+<script>
+// Celebration
+function celebrate(){
+  document.getElementById("celebration").style.display="block";
+}
+
+// Automatic Slideshow
+let slides=document.querySelectorAll(".slideshow img");
+let index=0;
+
+setInterval(()=>{
+  slides[index].classList.remove("active");
+  index=(index+1)%slides.length;
+  slides[index].classList.add("active");
+},3000);
+</script>
+
+</body>
+</html>
