@@ -117,12 +117,6 @@ button:active{
   0%{transform:translateY(0);}
   100%{transform:translateY(100vh);}
 }
-
-/* Responsive Adjustments */
-@media(min-width:600px){
-  h1{font-size:30px;}
-  p{font-size:17px;}
-}
 </style>
 </head>
 
@@ -168,6 +162,9 @@ button:active{
 
 </div>
 
+<!-- 🎵 Music File -->
+<audio id="birthdayMusic" src="birthday.mp3"></audio>
+
 <script>
 // Slideshow
 let slides=document.querySelectorAll(".slideshow img");
@@ -179,9 +176,15 @@ setInterval(()=>{
   slides[index].classList.add("active");
 },3000);
 
-// Celebration
+// Celebration with Music + Flowers
 function celebrate(){
   document.getElementById("celebration").style.display="block";
+
+  // Play music (iPhone safe)
+  let music = document.getElementById("birthdayMusic");
+  music.play();
+
+  // Flower animation
   for(let i=0;i<15;i++){
     let flower=document.createElement("div");
     flower.classList.add("flower");
