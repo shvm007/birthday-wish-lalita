@@ -3,74 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>माँ को जन्मदिन की शुभकामनाएँ</title>
+<title>ललिता राणा जी को जन्मदिन की शुभकामनाएँ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(135deg,#1f2a44,#3e4c75);
+  color:#f5f5f5;
   text-align:center;
-  background:linear-gradient(to right,#ffdde1,#ee9ca7);
-  color:#333;
 }
 
 .container{
-  padding:30px 20px;
+  max-width:800px;
+  margin:auto;
+  padding:40px 20px;
+  animation:fadeIn 2s ease-in-out;
 }
 
 h1{
-  font-size:30px;
-  color:#b30059;
+  font-family:'Playfair Display', serif;
+  font-size:34px;
+  color:#ffd700;
+  margin-bottom:10px;
 }
 
 h2{
-  font-size:22px;
+  font-size:24px;
+  font-weight:300;
+  margin-bottom:25px;
+  color:#ffffff;
+}
+
+.section{
+  margin:25px 0;
+  padding:20px;
+  background:rgba(255,255,255,0.08);
+  border-radius:12px;
 }
 
 p{
   font-size:18px;
-  line-height:1.6;
-  margin:15px 0;
+  line-height:1.8;
+}
+
+.signature{
+  margin-top:20px;
+  font-weight:bold;
+  font-size:18px;
+  color:#ffd700;
 }
 
 button{
-  padding:12px 30px;
+  margin-top:25px;
+  padding:12px 35px;
   font-size:18px;
   border:none;
-  border-radius:30px;
-  background:#b30059;
-  color:white;
+  border-radius:40px;
+  background:#ffd700;
+  color:#1f2a44;
   cursor:pointer;
   transition:0.3s;
 }
 
 button:hover{
-  background:#800040;
+  transform:scale(1.05);
+  background:#ffcc00;
 }
 
 #celebration{
   display:none;
-  font-size:22px;
   margin-top:20px;
-  color:#b30059;
+  font-size:20px;
+  color:#ffd700;
+  animation:fadeIn 1s ease-in-out;
 }
 
 /* Slideshow */
 .slideshow{
-  max-width:300px;
-  margin:30px auto;
-  position:relative;
+  max-width:350px;
+  margin:40px auto;
 }
 
 .slideshow img{
   width:100%;
   border-radius:15px;
   display:none;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
 .slideshow img.active{
   display:block;
+}
+
+/* Floating Flowers */
+.flower{
+  position:fixed;
+  top:-20px;
+  font-size:20px;
+  animation:fall 5s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes fall{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(100vh);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -78,42 +122,49 @@ button:hover{
 <body>
 
 <div class="container">
+
   <h1>🎂 48वाँ जन्मदिन मुबारक हो माँ 🎂</h1>
   <h2>ललिता राणा जी 🌸</h2>
 
-  <p>
-    माँ, आप मेरी ताकत हैं, मेरी प्रेरणा हैं।  
-    आपकी वजह से ही मैं आज जो भी हूँ।
-  </p>
+  <div class="section">
+    <p>
+      माँ, आप मेरे जीवन की सबसे बड़ी शक्ति हैं।  
+      आपने हमेशा मुझे सही रास्ता दिखाया,  
+      हर मुश्किल में मेरा साथ दिया और  
+      अपने सपनों से पहले मेरे सपनों को रखा।
+    </p>
+  </div>
 
-  <p>
-    भगवान आपको हमेशा खुश और स्वस्थ रखें।  
-    आपका बेटा हमेशा आपके साथ है।
-  </p>
+  <div class="section">
+    <p>
+      आपके त्याग, प्यार और आशीर्वाद की वजह से ही  
+      मैं आज जो भी हूँ।  
+      मैं भगवान से यही प्रार्थना करता हूँ कि  
+      आपको हमेशा स्वास्थ्य, सुख और शांति मिले।
+    </p>
+  </div>
 
-  <p><strong>– आपका बेटा, विराट राणा ❤️</strong></p>
+  <div class="signature">
+    सदा आपका बेटा — विराट राणा ❤️
+  </div>
 
   <button onclick="celebrate()">Celebrate 🎉</button>
 
   <div id="celebration">
-    🎉🎉 जन्मदिन की ढेर सारी शुभकामनाएँ माँ 🎉🎉
+    🎉 जन्मदिन की हार्दिक शुभकामनाएँ माँ 🎉
   </div>
 
-  <!-- Slideshow Section -->
+  <!-- Slideshow -->
   <div class="slideshow">
     <img src="photo1.jpeg" class="active">
     <img src="photo2.jpeg">
     <img src="photo3.jpeg">
   </div>
+
 </div>
 
 <script>
-// Celebration
-function celebrate(){
-  document.getElementById("celebration").style.display="block";
-}
-
-// Automatic Slideshow
+// Slideshow
 let slides=document.querySelectorAll(".slideshow img");
 let index=0;
 
@@ -122,6 +173,20 @@ setInterval(()=>{
   index=(index+1)%slides.length;
   slides[index].classList.add("active");
 },3000);
+
+// Celebration
+function celebrate(){
+  document.getElementById("celebration").style.display="block";
+  for(let i=0;i<20;i++){
+    let flower=document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerText="🌸";
+    flower.style.left=Math.random()*100+"vw";
+    flower.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(flower);
+    setTimeout(()=>flower.remove(),5000);
+  }
+}
 </script>
 
 </body>
