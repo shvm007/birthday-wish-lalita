@@ -8,102 +8,108 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body{
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
   font-family:'Poppins', sans-serif;
   background:linear-gradient(135deg,#1f2a44,#3e4c75);
   color:#f5f5f5;
   text-align:center;
+  -webkit-font-smoothing:antialiased;
 }
 
 .container{
-  max-width:800px;
+  max-width:500px;
   margin:auto;
-  padding:40px 20px;
-  animation:fadeIn 2s ease-in-out;
+  padding:30px 20px;
 }
 
 h1{
   font-family:'Playfair Display', serif;
-  font-size:34px;
+  font-size:24px;
   color:#ffd700;
-  margin-bottom:10px;
+  margin-bottom:8px;
+  line-height:1.4;
 }
 
 h2{
-  font-size:24px;
+  font-size:18px;
   font-weight:300;
-  margin-bottom:25px;
-  color:#ffffff;
+  margin-bottom:20px;
 }
 
 .section{
-  margin:25px 0;
-  padding:20px;
+  margin:18px 0;
+  padding:18px;
   background:rgba(255,255,255,0.08);
-  border-radius:12px;
+  border-radius:14px;
 }
 
 p{
-  font-size:18px;
+  font-size:15px;
   line-height:1.8;
 }
 
 .signature{
-  margin-top:20px;
-  font-weight:bold;
-  font-size:18px;
+  margin-top:18px;
+  font-weight:500;
+  font-size:16px;
   color:#ffd700;
 }
 
 button{
-  margin-top:25px;
-  padding:12px 35px;
-  font-size:18px;
+  margin-top:22px;
+  padding:14px 28px;
+  font-size:16px;
   border:none;
-  border-radius:40px;
+  border-radius:30px;
   background:#ffd700;
   color:#1f2a44;
   cursor:pointer;
   transition:0.3s;
+  width:80%;
+  max-width:250px;
 }
 
-button:hover{
-  transform:scale(1.05);
-  background:#ffcc00;
+button:active{
+  transform:scale(0.96);
 }
 
 #celebration{
   display:none;
-  margin-top:20px;
-  font-size:20px;
+  margin-top:18px;
+  font-size:16px;
   color:#ffd700;
-  animation:fadeIn 1s ease-in-out;
 }
 
 /* Slideshow */
 .slideshow{
-  max-width:350px;
-  margin:40px auto;
+  width:100%;
+  max-width:320px;
+  margin:30px auto 0;
 }
 
 .slideshow img{
   width:100%;
   border-radius:15px;
   display:none;
-  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  box-shadow:0 8px 20px rgba(0,0,0,0.5);
 }
 
 .slideshow img.active{
   display:block;
 }
 
-/* Floating Flowers */
+/* Flower animation */
 .flower{
   position:fixed;
   top:-20px;
-  font-size:20px;
-  animation:fall 5s linear infinite;
+  font-size:18px;
+  animation:fall 4s linear infinite;
   pointer-events:none;
 }
 
@@ -112,9 +118,10 @@ button:hover{
   100%{transform:translateY(100vh);}
 }
 
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
+/* Responsive Adjustments */
+@media(min-width:600px){
+  h1{font-size:30px;}
+  p{font-size:17px;}
 }
 </style>
 </head>
@@ -129,18 +136,16 @@ button:hover{
   <div class="section">
     <p>
       माँ, आप मेरे जीवन की सबसे बड़ी शक्ति हैं।  
-      आपने हमेशा मुझे सही रास्ता दिखाया,  
-      हर मुश्किल में मेरा साथ दिया और  
-      अपने सपनों से पहले मेरे सपनों को रखा।
+      आपने हर मुश्किल में मेरा साथ दिया  
+      और अपने सपनों से पहले मेरे सपनों को रखा।
     </p>
   </div>
 
   <div class="section">
     <p>
-      आपके त्याग, प्यार और आशीर्वाद की वजह से ही  
+      आपके प्यार और आशीर्वाद की वजह से  
       मैं आज जो भी हूँ।  
-      मैं भगवान से यही प्रार्थना करता हूँ कि  
-      आपको हमेशा स्वास्थ्य, सुख और शांति मिले।
+      भगवान आपको हमेशा स्वस्थ और खुश रखे।
     </p>
   </div>
 
@@ -177,14 +182,14 @@ setInterval(()=>{
 // Celebration
 function celebrate(){
   document.getElementById("celebration").style.display="block";
-  for(let i=0;i<20;i++){
+  for(let i=0;i<15;i++){
     let flower=document.createElement("div");
     flower.classList.add("flower");
     flower.innerText="🌸";
     flower.style.left=Math.random()*100+"vw";
-    flower.style.animationDuration=(Math.random()*3+3)+"s";
+    flower.style.animationDuration=(Math.random()*2+3)+"s";
     document.body.appendChild(flower);
-    setTimeout(()=>flower.remove(),5000);
+    setTimeout(()=>flower.remove(),4000);
   }
 }
 </script>
